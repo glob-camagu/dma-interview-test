@@ -1,5 +1,5 @@
 import React from 'react';
-import { Media } from 'react-bootstrap';
+import { Media, Label } from 'react-bootstrap';
 import moment from 'moment';
 import { movieShape } from './shapes';
 
@@ -21,7 +21,9 @@ const Movie = ({ movie }) => {
         <img src={movie.image} alt={movie.title} width={195} height={292} />
       </Media.Left>
       <Media.Body>
-        <Media.Heading>{movie.title}</Media.Heading>
+        <Media.Heading>
+          {movie.title} <Label>{movie.rating.toUpperCase()}</Label>
+        </Media.Heading>
         <p>Release Date: {formattedDate}</p>
         <p>Running Time: {formattedRunTime}</p>
       </Media.Body>
