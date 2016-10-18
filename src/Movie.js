@@ -1,5 +1,6 @@
 import React from 'react';
 import { Media } from 'react-bootstrap';
+import moment from 'moment';
 import { movieShape } from './shapes';
 
 const Movie = ({ movie }) => (
@@ -9,6 +10,7 @@ const Movie = ({ movie }) => (
     </Media.Left>
     <Media.Body>
       <Media.Heading>{movie.title}</Media.Heading>
+      <p>Release Date: {moment(movie.date).format('MMM D, YYYY')}</p>
     </Media.Body>
   </Media>
 );
